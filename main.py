@@ -32,6 +32,14 @@ def has_float_two_num(txtstr):
     else:
         print("no float with 2 digital after decimal here in " + txtstr)
 
+def has_floatwithendf(txtstr):
+    floatstuff = '[+-]?([0-9]*[.])[0-9]+[f]'
+    tester = re.search(floatstuff, txtstr)
+
+    if tester:
+        print("∃ float that ends in f " + txtstr)
+    else:
+        print("no float that ends in f here in " + txtstr)
 
 def has_cap(txtstr):
     c_stringer = '[A-Z]+[a-z]+$|[A-Z]+[a-z]+[0-9]+$'
@@ -59,6 +67,7 @@ for i in teststring:
     has_integer(i)
     has_float(i)
     has_float_two_num(i)
+    has_floatwithendf(i)
     has_cap(i)
     has_tripdigitsandlets(i)
     print('\n')
